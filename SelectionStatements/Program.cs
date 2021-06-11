@@ -12,17 +12,22 @@ namespace SelectionStatements
             Console.WriteLine("Guess my favorite number");
             var userInput = int.Parse(Console.ReadLine());
 
-            if (userInput > favNumber)
+            while (userInput != favNumber)
             {
-                Console.WriteLine("Too high");
-            }
-            else if (userInput < favNumber)
-            {
-                Console.WriteLine("Too low");
-            }
-            else
-            {
-                Console.WriteLine("Nevermind."); 
+                if (userInput > favNumber)
+                {
+                    Console.WriteLine("Too high");
+                    userInput = int.Parse(Console.ReadLine());
+                }
+                else if (userInput < favNumber)
+                {
+                    Console.WriteLine("Too low");
+                    userInput = int.Parse(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("Nevermind.");
+                }
             }
         }
     }
